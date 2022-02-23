@@ -1,0 +1,155 @@
+$color-1 : #cdb4db; //mobile
+$color-2 : #fff1e6; //tablet
+$color-3 : #52b788; //laptop
+$color-4 : #bee1e6; //desktop
+
+$mobile : 576px;
+$tablet : 768px;
+$laptop : 992px;
+$desktop : 1200px;
+
+* {
+    margin: 0 5px;
+    padding: 0;
+    box-sizing: border-box;
+
+    body {
+        font-family: sans-serif;
+    }
+}
+
+.container {
+    height: 100vh;
+}
+
+#size {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    color: red;
+}
+
+.header {
+    height: 10%;
+    // border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        font-size: 4vw;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        font-size: 2.5vw;
+        gap: 15px;
+    }
+}
+
+.main {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+
+    &__image {
+        width: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-image: url("../images/Portrait.png");
+    }
+
+    &__text {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-1 {
+            font-size: 10vw;
+        }
+
+        &-2,
+        &-3,
+        &-4 {
+            font-size: 5vw;
+        }
+    }
+}
+
+.footer {
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-right: 10%;
+
+    // use class syntax below in order to apply the same css to more than one div
+    [class ^="footer__"] {
+        img {
+            width: 5.3vw;
+        }
+    }
+}
+
+@media (max-width : $mobile) {
+    .header {
+        justify-content: center;
+
+        &__logo {
+            font-size: 40px;
+        }
+
+        &__menu {
+            display: none;
+        }
+    }
+
+    .main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__image {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            background-size: 100%;
+            background-position: center;
+        }
+
+        &__text {
+            width: 100%;
+
+            &-1 {
+                display: none;
+            }
+
+            &-2,
+            &-3,
+            &-4 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .footer {
+        justify-content: center;
+        margin: 0;
+
+        [class ^="footer__"] {
+            img {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+}
